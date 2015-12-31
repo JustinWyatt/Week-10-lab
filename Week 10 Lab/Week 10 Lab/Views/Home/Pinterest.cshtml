@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Week_10_Lab.Models.Pin>
+
+@{
+    ViewBag.Title = "Pinterest";
+}
+
+<h2>Pinterest</h2>
+
+
+
+@foreach (var item in Model) {
+    
+    <div id="pinterest-post">
+        <a href="#@item.ImagePath"><img src="@item.Url" /></a>
+    </div>
+
+}
+
