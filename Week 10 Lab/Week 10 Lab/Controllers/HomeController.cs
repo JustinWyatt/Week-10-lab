@@ -31,10 +31,9 @@ namespace Week_10_Lab.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult ViewPins(int userId)
+        public ActionResult Pinterest()
         {
-            var user = db.Users.Find(userId);
-            return Json(user.Pins);
+            return Json(db.Pins.ToList());
         }
     }
 }

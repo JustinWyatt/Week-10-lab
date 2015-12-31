@@ -1,5 +1,5 @@
 ﻿var app = angular.module("app", ['ngRoute', 'ngResource']).config(function ($routeProvider) {
-    $routeProvider.when('home/index', { controller: 'HomeController', templateUrl: 'pinterest.html' })
+    $routeProvider.when('home/index', { controller: 'HomeController', templateUrl: 'pinterest.cshtml' })
                   .otherwise({ redirectTo: '/index' });
 });
 
