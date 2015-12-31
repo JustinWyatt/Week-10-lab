@@ -49,9 +49,17 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -229,13 +237,22 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJS\app.js" />
+    <Content Include="AngularJS\Services\authInteceptorService.js" />
+    <Content Include="AngularJS\Services\authService.js" />
+    <Content Include="AngularJS\Factory\pinFactory.js" />
+    <Content Include="AngularJS\Controllers\loginController.js" />
+    <Content Include="AngularJS\Controllers\pinController.js" />
+    <Content Include="AngularJS\Services\pinService.js" />
+    <Content Include="AngularJS\Controllers\signupController.js" />
+    <Content Include="AngularViews\pinterest.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\angular-local-storage.min.js" />
+    <Content Include="AngularJS\Services\localStorageService.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -292,7 +309,6 @@
     <Content Include="Views\Home\Pinterest.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AngularViews\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,22 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
-    <script src="~/Scripts/angular-local-storage.min.js"></script>
+    @* App *@
+    <script src="~/AngularJS/app.js"></script>
+    @* Services *@
+    <script src="~/AngularJS/Services/authInteceptorService.js"></script>
+    <script src="~/AngularJS/Services/authService.js"></script>
+    <script src="~/AngularJS/Services/localStorageService.js"></script>
+    <script src="~/AngularJS/Services/pinService.js"></script>
+    
+    @* Controllers *@
+    <script src="~/AngularJS/Controllers/loginController.js"></script>
+    <script src="~/AngularJS/Controllers/pinController.js"></script>
+    <script src="~/AngularJS/Controllers/signupController.js"></script>
+    
+    @* Factory *@
+    <script src="~/AngularJS/Factory/pinFactory.js"></script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
