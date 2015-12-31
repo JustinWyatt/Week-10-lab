@@ -11,7 +11,7 @@
         <form>
             <input type="text" placeholder="Type Url" ng-model="newPin.url" />
             <input type="text" placeholder="Type Image" ng-model="newPin.imagepath" />
-            <input type="submit" value="Submit" ng-click="uploadPin(newPin)" />
+            <input type="submit" value="Submit" ng-click="makeUpload(newPin)" />
         </form>
         <div ng-repeat="p in pinList">
             <div><a href="{{p.Url}}"><img ng-src="{{p.ImagePath}}" /></a></div>
@@ -61,12 +61,13 @@
 
             init();
 
-            factory.uploadPin($scope.newPin).then(function (result) {
-                $scope.pinList.push({
-                    result
-                })
-            });
-            
+            $scope.makeUpload = function (newPin) {
+                factory.uploadPin(newPin).then(function (result) {
+                    $scope.pinList.push({
+                        result
+                    })
+                });
+            }
         });
     </script>
 }

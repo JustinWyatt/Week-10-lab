@@ -15,9 +15,8 @@ namespace Week_10_Lab.Controllers
         [HttpPost]
         public JsonResult UploadPin(Pin pin)
         {
-            var user = db.Users.Find(User.Identity.GetUserId());
-            var pins = user.Pins;
-            pins.Add(pin);
+            
+            db.Pins.Add(pin);
             db.SaveChanges();
             return Json(pin);
         }
