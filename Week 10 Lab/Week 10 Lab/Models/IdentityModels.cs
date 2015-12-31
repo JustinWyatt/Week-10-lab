@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Week_10_Lab.Models
 {
@@ -16,6 +18,8 @@ namespace Week_10_Lab.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public ICollection<Pin> Pins { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +33,8 @@ namespace Week_10_Lab.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Pin> Pins { get; set; }
+
     }
 }
