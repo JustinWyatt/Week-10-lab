@@ -214,10 +214,13 @@
     <Compile Include="Migrations\201512310125506_InitialCommit.Designer.cs">
       <DependentUpon>201512310125506_InitialCommit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512311945158_AddedUserName.cs" />
+    <Compile Include="Migrations\201512311945158_AddedUserName.Designer.cs">
+      <DependentUpon>201512311945158_AddedUserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AuthRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Pin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,6 +292,7 @@
     <Content Include="Views\Home\Pinterest.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AngularViews\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +306,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512310125506_InitialCommit.resx">
       <DependentUpon>201512310125506_InitialCommit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512311945158_AddedUserName.resx">
+      <DependentUpon>201512311945158_AddedUserName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

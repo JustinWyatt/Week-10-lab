@@ -98,8 +98,13 @@
             authService.fillAuthData();
         }]);
 
-        app.config(function ($httpProvider) {
+        app.config(function ($httpProvider, $routeProvider) {
             $httpProvider.interceptors.push('authInterceptorService');
+
+            $routeProvider.when("home/pinterest", {
+                controller: "pinController",
+                templateUrl: "pinterest.cshtml"
+            });
         });
 
         app.factory('factory', function ($http, $q, $location, localStorageService) {

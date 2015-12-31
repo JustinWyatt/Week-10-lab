@@ -38,13 +38,5 @@ namespace Week_10_Lab.Models
 
     }
     
-    public class AuthContext : IdentityDbContext<IdentityUser>
-    {
-        public AuthContext()
-            : base("AuthContext")
-        {
-
-        }
-    }
     
 }
