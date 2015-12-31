@@ -28,7 +28,7 @@ namespace Week_10_Lab.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -37,4 +37,14 @@ namespace Week_10_Lab.Models
         public DbSet<Pin> Pins { get; set; }
 
     }
+    
+    public class AuthContext : IdentityDbContext<IdentityUser>
+    {
+        public AuthContext()
+            : base("AuthContext")
+        {
+
+        }
+    }
+    
 }

@@ -23,11 +23,13 @@ namespace Week_10_Lab.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
+        private AuthRepository _repo = null;
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
+            _repo = new AuthRepository();
         }
 
         public AccountController(ApplicationUserManager userManager,
