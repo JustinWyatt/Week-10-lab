@@ -21,19 +21,17 @@ namespace Week_10_Lab.Controllers
             db.SaveChanges();
             return Json(pin);
         }
-
-        [Authorize]
-        [HttpGet]
-        public ActionResult UploadPin()
-        {
-            return View();
-        }
-
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult Pinterest()
         {
-            return Json(db.Pins.ToList());
+            return View();
+        }
+        
+        [HttpGet]
+        public JsonResult GetPins()
+        {
+            return Json(db.Pins.ToList(), JsonRequestBehavior.AllowGet);    
         }
     }
 }

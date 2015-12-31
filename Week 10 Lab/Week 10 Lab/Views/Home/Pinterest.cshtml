@@ -6,13 +6,67 @@
 
 <h2>Pinterest</h2>
 
-
-
-@foreach (var item in Model) {
-    
-    <div id="pinterest-post">
-        <a href="#@item.ImagePath"><img src="@item.Url" /></a>
+<div ng-app="app">
+    <div ng-controller="pinController">
+        <form>
+            <input type="text" placeholder="Type Url" ng-model="newPin.url" />
+            <input type="text" placeholder="Type Image" ng-model="newPin.imagepath" />
+            <input type="submit" value="Submit" ng-click="uploadPin(newPin)" />
+        </form>
+        <div ng-repeat="p in pinList">
+            <div><a href="{{p.Url}}"><img ng-src="{{p.ImagePath}}" /></a></div>
+        </div>
     </div>
+</div>
 
+@*@foreach (var item in Model)
+    {
+        <div id="pinterest-post">
+            <a href="#@item.Url "><img src="@item.ImagePath" /></a>
+        </div>
+
+    }*@
+
+@section scripts{
+
+    <script>
+        var app = angular.module("app", []);
+
+        app.factory('factory', function ($http) {
+            var factory = {};
+
+            factory.getPins = function () {
+                return $http.get('/home/getpins').then(function (response) {
+                    console.log(response);
+                    return response.data;
+                }, function (response) {
+                    console.log(response);
+                });
+            }
+
+            factory.uploadPin = function (pin) {
+                return $http.post('/home/uploadpin', pin).then(function (response) {
+                    return response.data;
+                });
+            }
+            return factory;
+        });
+
+        app.controller('pinController', function ($scope, factory) {
+            var init = function () {
+                factory.getPins().then(function (results) {
+                    $scope.pinList = results;
+                });
+            };
+
+            init();
+
+            factory.uploadPin($scope.newPin).then(function (result) {
+                $scope.pinList.push({
+                    result
+                })
+            });
+            
+        });
+    </script>
 }
-
