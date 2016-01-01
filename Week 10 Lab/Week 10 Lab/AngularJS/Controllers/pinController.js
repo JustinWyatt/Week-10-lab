@@ -1,5 +1,5 @@
 ﻿'use strict'
-app.controller('pinController', ['$scope', 'pinFactory', function ($scope, pinFactory) {
+app.controller('pinController', ['$scope', 'pinFactory',  function ($scope, pinFactory) {
 
     $scope.pinList = [];
 
@@ -15,6 +15,7 @@ app.controller('pinController', ['$scope', 'pinFactory', function ($scope, pinFa
         pinFactory.uploadPin(newPin).then(function (result) {
             $scope.pinList.unshift(result);
             console.log(result);
+            $scope.newPin = "";
         });
     }
 }]);

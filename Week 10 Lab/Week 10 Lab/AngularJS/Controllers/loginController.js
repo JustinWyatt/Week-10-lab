@@ -5,19 +5,17 @@ app.controller('loginController', ['$scope', '$location', 'authService', functio
         userName: "",
         password: ""
     };
-
     $scope.message = "";
 
     $scope.login = function () {
 
         authService.login($scope.loginData).then(function (response) {
-
-            $location.path('/home/pinterest/id');
-
+            $location.path('home/pinterest');
+            console.log('logged in');
+            $scope.message = "logged in";
         },
          function (err) {
              $scope.message = err.error_description;
          });
     };
-
 }]);
